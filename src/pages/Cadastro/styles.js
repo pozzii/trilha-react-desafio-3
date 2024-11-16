@@ -62,21 +62,36 @@ export const SubtitleLogin = styled.p`
 
 `
 
-export const EsqueciText = styled.p`
+
+export const Text = styled.p`
     font-family: 'Open sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 19px;
-    
-    color: #e5e044;
+    margin-top: 20px;
+    color: #ffffff;
 `
-export const CriarText = styled.p`
+export const LoginText = styled.p`
     font-family: 'Open sans';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 14px;
     line-height: 19px;
+    color: #ffffff;
+    margin-top: 10px;
     
-    color: #e23dd7;
+    display: flex;
+    flex-direction: row;
+    
+    a{
+        margin-left: 10px;
+        color: #23DD7A;
+    }
+    a:hover{
+        margin-left: 10px;
+        color: #23DD4A;
+    }
+    
 `
+

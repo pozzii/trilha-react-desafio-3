@@ -1,4 +1,4 @@
-import { MdEmail, MdLock } from 'react-icons/md'
+import { MdAccountBox, MdEmail, MdLock } from 'react-icons/md'
 import { useNavigate } from  "react-router-dom"
 import { useForm } from 'react-hook-form'
 import { Button } from "../../components/Button"
@@ -8,7 +8,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 
 import { api } from '../../services/api'
-import { Column, Container, CriarText, EsqueciText, Row, SubtitleLogin, Title, TitleLogin, Wrapper } from './styles'
+import { Column, Container, Text, LoginText, Row, SubtitleLogin, Title, TitleLogin, Wrapper } from './styles'
 
 
 const schema = yup
@@ -19,7 +19,7 @@ const schema = yup
   .required()
 
 
-const Login = () => {
+const Cadastro = () => {
 
   const navigate = useNavigate();
   
@@ -54,28 +54,28 @@ const Login = () => {
         <Column>
           <Wrapper>
             <TitleLogin>
-              Faça seu cadastro
+            Comece agora grátis
             </TitleLogin>
             <SubtitleLogin>
-              Faça seu cadastro e make the change._
+            Crie sua conta e make the change._
             </SubtitleLogin>
             <form onSubmit={handleSubmit(onSubmit)}>
+              <Input name="name" errorMessage={errors.name?.message} control={control} placeholder="Nome completo" leftIcon={<MdAccountBox/>}/>
               <Input name="email" errorMessage={errors.email?.message} control={control} placeholder="E-mail" leftIcon={<MdEmail/>}/>
               <Input name="password" errorMessage={errors.password?.message}  control={control} placeholder="Senha" type="password" leftIcon={<MdLock/>}/>
-              <Button title="Entrar" variant="secondary" type="submit"/>
+              <Button title="Criar conta" variant="secondary" type="submit"/>
             </form>
-            <Row>
-              <EsqueciText>
-                Esqueci minha senha
-              </EsqueciText>
-              <CriarText>
-                Criar Conta
-              </CriarText>
-            </Row>
+              <Text>
+              Ao clicar em "criar minha conta grátis", declaro que aceito as Políticas de Privacidade e os Termos de Uso da DIO.       
+              
+              <LoginText>
+                Já tenho conta. <a href='/login'>Fazer login</a>
+              </LoginText>
+              </Text>
           </Wrapper>
         </Column>
       </Container>
     </>)
 }
 
-export { Login }
+export { Cadastro }
